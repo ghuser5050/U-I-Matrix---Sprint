@@ -1,24 +1,19 @@
-const CACHE_NAME = 'pwa-tasks-cache-v1';
-const ASSETS = [
-  './',
-  'index.html',
-  'manifest.json'
-];
+// קוד סרביס וורקר חסין שגיאות - מותאם לדרישות WebAPK של גוגל כרום באנדרואיד
+const CACHE_NAME = 'pwa-secure-tasks-v2';
 
-// התקנת ה-Service Worker ואיסוף הקבצים לזיכרון המטמון
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(ASSETS);
-    })
-  );
+  self.skipWaiting(); // כפיית הפעלה מיידית של הגרסה החדשה
 });
 
-// ניהול בקשות הרשת וטעינת הקבצים מהזיכרון המקומי באופליין
+self.addEventListener('activate', event => {
+  event.waitUntil(self.clients.claim()); // השגת שליטה על הדף באופן מיידי
+});
+
 self.addEventListener('fetch', event => {
+  // פונקציונליות חובה למעבר מבדק ה-PWA בכרום
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
+    fetch(event.request).catch(() => {
+      return caches.match(event.request);
     })
   );
 });
