@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head>
+      <meta data-sandbox-injected="" http-equiv="Content-Security-Policy" content="
+          default-src 'none';
+          base-uri 'none';
+          connect-src https://fonts.gstatic.com https://www.gstatic.com https://cdnjs.cloudflare.com https://maps.googleapis.com https://places.googleapis.com https://cdn.tailwindcss.com;
+          font-src https://fonts.gstatic.com data: https://cdnjs.cloudflare.com https://maps.googleapis.com https://places.googleapis.com https://cdn.tailwindcss.com;
+          form-action 'none';
+          frame-src https://www.google.com/maps/;
+          worker-src blob: https://*.scf.usercontent.goog;
+          img-src https://*.gstatic.com https://unsplash.com https://images.unsplash.com https://flagcdn.com https://a.espncdn.com https://placehold.co https://lens.usercontent.google.com https://img.youtube.com https://lh3.googleusercontent.com https://maps.googleapis.com data: https://encrypted-tbn0.gstatic.com https://encrypted-tbn1.gstatic.com https://encrypted-tbn2.gstatic.com https://encrypted-tbn3.gstatic.com ;
+          media-src 'none';
+          object-src 'none';
+          script-src 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://widgetlibs.static.usercontent.goog https://*.scf.usercontent.goog https://cdnjs.cloudflare.com https://maps.googleapis.com https://places.googleapis.com https://cdn.tailwindcss.com;
+          style-src 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://www.gstatic.com/ https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://maps.googleapis.com https://places.googleapis.com https://cdn.tailwindcss.com;">
+      <meta data-sandbox-injected="" charset="UTF-8">
+      <meta data-sandbox-injected="" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="enable-onep-api" content="false"><script data-sandbox-injected="true">(function(){var g=Object.defineProperty,k=globalThis,l=function(a,b){if(b)a:{var c=k;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&g(c,a,{configurable:!0,writable:!0,value:b})}};l("Promise.withResolvers",function(a){return a?a:function(){var b,c;return{promise:new Promise(function(d,e){b=d;c=e}),resolve:b,reject:c}}});var m=function(a){return typeof a==="object"&&a!==null&&"kind"in a&&typeof a.kind==="string"&&("payload"in a||a.kind==="___CROSS_FRAME_HANDSHAKE___")},n=class{constructor(){this.j=new Map}i(a){var b=a.data;if(m(b)){let c=b.payload;if(b=this.j.get(b.kind))(a=a.ports&&a.ports.length>0?a.ports:void 0)?b(c,a):b(c)}}sendMessage(a,b,c){if(!this.port)throw Error("a");a={kind:String(a),payload:b||{}};c&&c.length>0?this.port.postMessage(a,c):this.port.postMessage(a)}},p=async function(a){var b=window.parent;
+return a.h?{}:new Promise(c=>{var d=e=>{e.source===b&&m(e.data)&&e.data.kind==="___CROSS_FRAME_HANDSHAKE___"&&(window.removeEventListener("message",d),a.port=e.ports[0],a.port.onmessage=a.i.bind(a),a.h=!0,c(e.data.payload||{}))};window.addEventListener("message",d)})},q=class extends n{constructor(){super(...arguments);this.h=!1}};if(typeof window!=="undefined"&&window.history){let a=window.history.replaceState.bind(window.history);window.history.replaceState=(c,d,e)=>{try{a(c,d,e)}catch{}};let b=window.history.pushState.bind(window.history);window.history.pushState=(c,d,e)=>{try{b(c,d,e)}catch{}}}
+if(typeof window!=="undefined"&&window.fetch){let a=window.fetch.bind(window);window.fetch=async(...b)=>{try{return await a(...b)}catch(c){b=b[0];b=typeof b==="string"?b:b&&typeof b==="object"&&"url"in b?String(b.url||""):String(b||"");if(b.includes("tracking")||b.includes("analytics")||b.includes("beacon"))return new Response(null,{status:204});throw c;}}}var {promise:r,resolve:t}=Promise.withResolvers(),{promise:u,resolve:v}=Promise.withResolvers(),w=!1;
+(async function(){var a=new q,b=await p(a);b&&b.enableSandboxToEditorSync&&(w=!!b.enableSandboxToEditorSync);if(b&&b.initialPayload){let c=b.initialPayload;window.initialPayload=c;window.setTimeout(()=>{window.dispatchEvent(new MessageEvent("message",{data:c}))},0)}t(a);(a=a.port)&&v(a)})();function x(a){r.then(b=>{b.sendMessage("ERROR",{error:a})})}window.onerror=(a,b,c,d,e)=>{x(e);return!0};
+window.onunhandledrejection=a=>{var b=String(a.reason||"");b.includes("Failed to fetch")||b.includes("Content Security Policy")||b.includes("replaceState")||x(Error(a.reason));a.preventDefault()};
+window.document.addEventListener("DOMContentLoaded",()=>{r.then(a=>{a.sendMessage("ISOLATE_READY",{});var b=window.document.querySelector("#resize-target")||window.document.body,c=NaN,d=NaN,e=!1;(new ResizeObserver(()=>{e||(e=!0,window.requestAnimationFrame(()=>{e=!1;var f=Math.ceil(b.scrollHeight),h=Math.ceil(b.scrollWidth);f===c&&h===d||f===0&&h===0||(c=f,d=h,a.sendMessage("RESIZE",{height:f,width:h}))}))})).observe(b);if(w){let f;(new MutationObserver(()=>{f&&window.clearTimeout(f);f=window.setTimeout(()=>
+{f=void 0;a.sendMessage("HTML_CHANGED",{html:"<!DOCTYPE html>\n"+window.document.documentElement.outerHTML})},500)})).observe(window.document.documentElement,{attributes:!0,childList:!0,subtree:!0,characterData:!0})}})});window.addEventListener("resizeRequest",()=>{r.then(a=>{var b=window.document.querySelector("#resize-target")||window.document.body,c=Math.ceil(b.scrollHeight);b=Math.ceil(b.scrollWidth);c===0&&b===0||a.sendMessage("MANUAL_RESIZE",{height:c,width:b})})});
+function y(a){var b=null;a instanceof Element?b=a:a&&a.nodeType===Node.TEXT_NODE&&(b=a.parentElement);if(!b)return null;for(a=b;a&&a!==window.document.body;){if(a.matches('a,button,input,textarea,select,option,details,summary,area,[jsaction],[data-jsaction],[role],[tabindex]:not([tabindex="-1"])'))return z(a);if(a instanceof HTMLElement&&a.isContentEditable)return z(a);a=a.parentElement}return null}
+function z(a){var b={tagName:a.tagName.toUpperCase(),attributes:{}},c=["role","jsaction","data-jsaction","tabindex"];for(let d of c)c=a.getAttribute(d),c!==null&&(b.attributes[d]=c);a instanceof HTMLElement&&a.isContentEditable&&(b.isContentEditable=!0);return b}window.addEventListener("click",a=>{var b=(a=a.target)?y(a):null;r.then(c=>{c.sendMessage("CLICK",{matchedNode:b})})},!0);
+window.addEventListener("request_window_open",a=>{var b=a.detail;r.then(c=>{c.sendMessage("REQUEST_WINDOW_OPEN",{url:b.url,hostname:b.hostname,target:b.target,features:b.features,skipConfirmation:b.skipConfirmation})})});window.sandboxConsoleLog=(a,b)=>{r.then(c=>{c.sendMessage("CONSOLE_LOG",{logLevel:a,message:b})})};if(document.querySelector('meta[name="enable-onep-api"]')?.getAttribute("content")==="true"){let a=!1;window.claimPortReady=()=>{if(a)return null;a=!0;return u}}window.logError=x;}).call(this);</script><script>(function(){var d=console.warn,e=console.error,f=console.info;function g(c){return c.map(a=>{try{return a instanceof Error?a.toString():typeof a==="object"?JSON.stringify(a):String(a)}catch(b){return String(a)}}).join(" ")}function h(c,a){return(...b)=>{a.apply(console,b);b=g(b);b.startsWith("Sandbox ready")||b.startsWith("Sandbox frame bootstrapping")||window.sandboxConsoleLog&&window.sandboxConsoleLog(c,b)}}console.log=h("log",console.log);console.warn=h("warn",d);console.error=h("error",e);
+console.info=h("info",f);window.addEventListener("error",c=>{window.sandboxConsoleLog&&window.sandboxConsoleLog("error",c.message)});}).call(this);</script><script>(function(){function e(a){return["https://www.google.com/maps/","https://maps.google.com/","https://www.youtube.com/watch?v=","https://www.youtube.com/v/","https://youtu.be/"].some(b=>a.startsWith(b))}window.open=(a,b,c)=>{var d,g=!1;if(a)try{if(d=a instanceof URL?a.toString():String(a)){var n=(new URL(d,window.location.href)).hostname;g=e(d)}}catch(p){}window.dispatchEvent(new CustomEvent("request_window_open",{detail:{url:d,hostname:n,target:b,features:c,h:g}}));return null};var f,h,k;
+function l(a){a.button===0&&((f=a=(a.target instanceof Element?a.target:null)?.closest("a")??void 0)?(a=a.getBoundingClientRect(),h=a.left,k=a.top):k=h=void 0)}function m(){k=h=f=void 0}window.addEventListener("pointerdown",l,!0);window.addEventListener("mousedown",l,!0);window.addEventListener("pointercancel",m,!0);
+window.addEventListener("click",a=>{var b=(a.target instanceof Element?a.target:null)?.closest("a"),c=b?.getBoundingClientRect();c=a.detail>0&&b!=null&&f===b&&c!==void 0&&h!==void 0&&k!==void 0&&(Math.abs(c.left-h)>5||Math.abs(c.top-k)>5);m();if(b&&b.hasAttribute("href")){b=b.getAttribute("href")??"";var d=b.trim();if(!d.startsWith("#"))if(d=d.replace(/[\u0000-\u0020]+/g,""),d===""||/^javascript:/i.test(d))a.preventDefault();else if(c||a.defaultPrevented)a.preventDefault(),a.stopPropagation();else{c=
+!1;try{var g=(new URL(b,window.location.href)).hostname;c=e(b)}catch{}a.preventDefault();a.stopPropagation();window.dispatchEvent(new CustomEvent("request_window_open",{detail:{url:b,hostname:g,target:"_blank",h:c}}))}}},!0);}).call(this);</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>סביבת עבודה לפרודוקטיביות חכמה</title><link rel="manifest" id="pwa-manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22%D7%9E%D7%A8%D7%9B%D7%96%20%D7%94%D7%A4%D7%A8%D7%95%D7%93%D7%95%D7%A7%D7%98%D7%99%D7%91%D7%99%D7%95%D7%AA%20%D7%94%D7%97%D7%9B%D7%9D%20%D7%90%D7%95%D7%A4%D7%9C%D7%99%D7%99%D7%9F%22%2C%22short_name%22%3A%22%D7%9E%D7%98%D7%A8%D7%99%D7%A6%D7%94%20%D7%97%D7%9B%D7%9E%D7%94%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f8fafc%22%2C%22theme_color%22%3A%22%230f172a%22%2C%22description%22%3A%22%D7%9E%D7%98%D7%A8%D7%99%D7%A6%D7%AA%20%D7%90%D7%99%D7%99%D7%96%D7%A0%D7%90%D7%95%D7%95%D7%A8%20%D7%95%D7%98%D7%99%D7%99%D7%9E%D7%A8%20%D7%A4%D7%95%D7%9E%D7%95%D7%93%D7%95%D7%A8%D7%95%20%D7%9E%D7%A9%D7%95%D7%9C%D7%91%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%91%D7%A1%D7%99%D7%A1%20IndexedDB%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Butf8%2C%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20100%20100'%3E%3Crect%20width%3D'100'%20height%3D'100'%20rx%3D'24'%20fill%3D'%25230f172a'%2F%3E%3Ctext%20x%3D'50'%20y%3D'66'%20font-size%3D'52'%20text-anchor%3D'middle'%3E%F0%9F%9A%80%3C%2Ftext%3E%3C%2Fsvg%3E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D"><meta name="theme-color" content="#0f172a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="פרודוקטיביות"><script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f8fafc;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e2e8f0;
+            border-radius: 2px;
+        }
+    </style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.relative{position:relative}.inset-0{inset:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mt-0\.5{margin-top:0.125rem}.mt-2{margin-top:0.5rem}.ml-0\.5{margin-left:0.125rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-3\.5{height:0.875rem}.h-5{height:1.25rem}.h-\[220px\]{height:220px}.h-4{height:1rem}.h-32{height:8rem}.max-h-\[90vh\]{max-height:90vh}.min-h-\[200px\]{min-height:200px}.min-h-\[400px\]{min-height:400px}.min-h-screen{min-height:100vh}.w-3\.5{width:0.875rem}.w-full{width:100%}.w-px{width:1px}.w-4{width:1rem}.max-w-4xl{max-width:56rem}.max-w-\[140px\]{max-width:140px}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.select-all{-webkit-user-select:all;user-select:all}.grid-cols-\[35px_1fr_1fr\]{grid-template-columns:35px 1fr 1fr}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-0\.5{gap:0.125rem}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.break-all{word-break:break-all}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-emerald-100{--tw-border-opacity:1;border-color:rgb(209 250 229 / var(--tw-border-opacity, 1))}.border-indigo-100{--tw-border-opacity:1;border-color:rgb(224 231 255 / var(--tw-border-opacity, 1))}.border-indigo-100\/50{border-color:rgb(224 231 255 / 0.5)}.border-red-100{--tw-border-opacity:1;border-color:rgb(254 226 226 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-200\/60{border-color:rgb(226 232 240 / 0.6)}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-300\/30{border-color:rgb(203 213 225 / 0.3)}.border-slate-50{--tw-border-opacity:1;border-color:rgb(248 250 252 / var(--tw-border-opacity, 1))}.bg-amber-200\/50{background-color:rgb(253 230 138 / 0.5)}.bg-amber-50\/40{background-color:rgb(255 251 235 / 0.4)}.bg-emerald-200\/50{background-color:rgb(167 243 208 / 0.5)}.bg-emerald-50\/40{background-color:rgb(236 253 245 / 0.4)}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-50\/50{background-color:rgb(238 242 255 / 0.5)}.bg-red-200\/50{background-color:rgb(254 202 202 / 0.5)}.bg-red-50\/40{background-color:rgb(254 242 242 / 0.4)}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-100\/60{background-color:rgb(241 245 249 / 0.6)}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-slate-200\/80{background-color:rgb(226 232 240 / 0.8)}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-50\/50{background-color:rgb(248 250 252 / 0.5)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/40{background-color:rgb(15 23 42 / 0.4)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-0\.5{padding:0.125rem}.p-2{padding:0.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pr-0\.5{padding-right:0.125rem}.pt-1{padding-top:0.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-6xl{font-size:3.75rem;line-height:1}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[8px\]{font-size:8px}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-light{font-weight:300}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-normal{line-height:1.5}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-emerald-900{--tw-text-opacity:1;color:rgb(6 78 59 / var(--tw-text-opacity, 1))}.text-indigo-900{--tw-text-opacity:1;color:rgb(49 46 129 / var(--tw-text-opacity, 1))}.text-indigo-900\/90{color:rgb(49 46 129 / 0.9)}.text-red-900{--tw-text-opacity:1;color:rgb(127 29 29 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-150{transition-duration:150ms}.duration-200{transition-duration:200ms}.hover\:border-slate-400:hover{--tw-border-opacity:1;border-color:rgb(148 163 184 / var(--tw-border-opacity, 1))}.hover\:bg-amber-100\/60:hover{background-color:rgb(254 243 199 / 0.6)}.hover\:bg-emerald-100\/60:hover{background-color:rgb(209 250 229 / 0.6)}.hover\:bg-red-100\/60:hover{background-color:rgb(254 226 226 / 0.6)}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200\/60:hover{background-color:rgb(226 232 240 / 0.6)}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:bg-amber-50:hover{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-50:hover{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87 / var(--tw-bg-opacity, 1))}.hover\:text-red-600:hover{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.hover\:text-slate-800:hover{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.hover\:text-amber-600:hover{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.hover\:text-emerald-600:hover{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.hover\:text-red-500:hover{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.hover\:text-slate-700:hover{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:opacity-100:focus{opacity:1}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-slate-900:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(15 23 42 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:items-start{align-items:flex-start}.sm\:justify-start{justify-content:flex-start}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:p-6{padding:1.5rem}}</style></head>
+    <body class="min-h-screen flex flex-col p-3 md:p-6 text-slate-800">
+  
+  <header class="max-w-4xl w-full mx-auto mb-4 bg-white p-4 rounded-xl shadow-xs border border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div class="text-center sm:text-right flex flex-col items-center sm:items-start gap-1 w-full sm:w-auto">
+            <h1 class="text-xl font-bold text-slate-900 flex items-center justify-center sm:justify-start gap-2">
+                <span>🚀</span> מרכז הפרודוקטיביות החכם
+            </h1>
+            <p class="text-xs text-slate-500 mt-0.5">ניהול זמן אופליין חסין מחיקות באמצעות IndexedDB ו-PWA</p>
+            
+            <!-- סרגל כלי נתונים (אופליין ואנונימיות) -->
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 mt-2">
+                <button onclick="copyAppCode()" class="text-[10px] bg-slate-900 text-white hover:bg-slate-800 font-medium px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 shadow-2xs">
+                    <span>💾</span> העתק קוד מקור
+                </button>
+                <button onclick="exportTasksJSON()" class="text-[10px] bg-white text-slate-600 hover:bg-slate-50 font-medium px-2.5 py-1 rounded-lg border border-slate-200 transition-colors flex items-center gap-1">
+                    <span>📤</span> ייצא גיבוי (JSON)
+                </button>
+                <button onclick="document.getElementById('import-file-input').click()" class="text-[10px] bg-white text-slate-600 hover:bg-slate-50 font-medium px-2.5 py-1 rounded-lg border border-slate-200 transition-colors flex items-center gap-1">
+                    <span>📥</span> ייבא גיבוי
+                </button>
+                <input type="file" id="import-file-input" accept=".json,.txt,text/plain" onchange="importTasksJSON(event)" class="hidden">
+            </div>
+        </div>
+        
+        <!-- מוני ביצוע מהירים של המטריצה -->
+        <div id="matrix-stats-header" class="flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 text-xs">
+            <div class="text-center">
+                <span id="total-tasks" class="block font-bold text-slate-800">4</span>
+                <span class="text-[10px] text-slate-500">משימות</span>
+            </div>
+            <div class="w-px h-5 bg-slate-200"></div>
+            <div class="text-center">
+                <span id="completed-tasks" class="block font-bold text-emerald-600">0</span>
+                <span class="text-[10px] text-slate-500">בוצעו</span>
+            </div>
+            <div class="w-px h-5 bg-slate-200"></div>
+            <div class="text-center">
+                <span id="completion-rate" class="block font-bold text-blue-600">0%</span>
+                <span class="text-[10px] text-slate-500">ביצוע</span>
+            </div>
+        </div>
+    </header><nav class="max-w-4xl w-full mx-auto mb-4 bg-white p-1 rounded-xl shadow-xs border border-slate-100 flex gap-1">
+        <button id="tab-eisenhower" onclick="switchTab('eisenhower')" class="flex-1 py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all bg-slate-900 text-white">
+            <span>📊</span> מטריצת אייזנאוור
+        </button>
+        <button id="tab-pomodoro" onclick="switchTab('pomodoro')" class="flex-1 py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all text-slate-600 hover:bg-slate-50">
+            <span>⏱️</span> טיימר פומודורו
+        </button>
+    </nav><div class="max-w-4xl w-full mx-auto flex-1 flex flex-col">
+        
+        <!-- אפליקציה 1: מטריצת אייזנאוור -->
+        <div id="app-eisenhower" class="flex flex-col flex-1">
+            <!-- אזור יצירת משימה -->
+            <section class="w-full mb-4 bg-white p-4 rounded-xl shadow-xs border border-slate-100">
+                <div id="task-form" class="flex flex-col gap-3">
+                    <div class="flex flex-col sm:flex-row gap-3 flex-1">
+                        <input type="text" id="task-text" required="" placeholder="מה המשימה הבאה שלך?" class="flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all text-xs">
+                        
+                        <div class="flex items-center gap-4 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 justify-around sm:justify-start">
+                            <label class="flex items-center gap-2 cursor-pointer text-xs group">
+                                <input type="checkbox" id="is-important" class="w-3.5 h-3.5 text-slate-900 border-slate-300 rounded focus:ring-slate-900">
+                                <span class="text-slate-600 group-hover:text-slate-900">🌟 חשוב</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer text-xs group">
+                                <input type="checkbox" id="is-urgent" class="w-3.5 h-3.5 text-slate-900 border-slate-300 rounded focus:ring-slate-900">
+                                <span class="text-slate-600 group-hover:text-slate-900">⏰ דחוף</span>
+                            </label>
+                        </div>
+
+                        <button type="button" onclick="handleAddTask()" class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-4 py-2 rounded-lg transition-colors text-xs shadow-xs flex items-center justify-center gap-1">
+                            <span>➕</span> הוסף
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- טבלת המטריצה: מבנה 2x2 קשיח -->
+            <div class="flex-1 flex flex-col gap-2">
+                <!-- כותרות העמודות (ציר דחיפות) -->
+                <div class="grid grid-cols-[35px_1fr_1fr] gap-2 text-center font-bold text-[11px] text-slate-600">
+                    <div></div>
+                    <div class="bg-slate-200/80 py-1.5 rounded-lg border border-slate-300/30 flex items-center justify-center gap-1">
+                        ⏰ דחוף
+                    </div>
+                    <div class="bg-slate-100 py-1.5 rounded-lg border border-slate-200 flex items-center justify-center gap-1">
+                        ⏳ לא דחוף
+                    </div>
+                </div>
+
+                <!-- שורה 1: משימות חשובות (רבעים 1 ו-2) -->
+                <div class="grid grid-cols-[35px_1fr_1fr] gap-2 items-stretch min-h-[200px] mb-2">
+                    <div class="bg-indigo-50 border border-indigo-100 text-indigo-900 rounded-lg py-2 flex flex-col items-center justify-center font-bold text-[10px] leading-none gap-0.5 shadow-xs select-none">
+                        <span>⭐</span><span>ח</span><span>ש</span><span>ו</span><span>ב</span>
+                    </div>
+                    
+                    <!-- רבע 1 -->
+                    <div id="q1-container" class="bg-red-50/40 border border-red-100 rounded-xl p-2.5 flex flex-col h-[220px] transition-all duration-200">
+                        <div onclick="toggleExpandQuadrant('q1')" class="flex justify-between items-center mb-1.5 text-[10px] font-semibold text-red-900 cursor-pointer hover:bg-red-100/60 p-1 rounded-lg transition-colors select-none">
+                            <span class="flex items-center gap-1">🔍 רבע 1: בצע מייד</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="bg-red-200/50 px-1.5 py-0.5 rounded text-[9px]" id="count-q1">1</span>
+                                <button onclick="event.stopPropagation(); toggleExpandQuadrant('q1')" id="close-q1" class="hidden text-slate-500 hover:text-slate-800 text-xs font-bold px-1">✕</button>
+                            </div>
+                        </div>
+                        <div id="q1-list" class="flex-1 overflow-y-auto custom-scrollbar space-y-1.5 pr-0.5"><div class="bg-white p-2 rounded-lg border transition-all flex flex-col gap-1 group hover:shadow-xs border-slate-200"><div class="flex items-start justify-between gap-1.5"><div class="flex items-start gap-1.5 flex-1"><button class="w-4 h-4 rounded border flex items-center justify-center mt-0.5 text-[10px] font-bold transition-colors border-slate-300 hover:border-slate-400 bg-slate-50"></button><span class="text-[11px] leading-tight text-slate-700 break-all flex-1 font-normal">להגיש את הדוח הדחוף להנהלה</span></div><button class="text-slate-300 hover:text-red-500 p-0.5 rounded transition-colors text-[9px] opacity-0 group-hover:opacity-100 focus:opacity-100">❌</button></div><div class="flex items-center justify-end gap-1 pt-1 border-t border-slate-50 text-[8px] text-slate-400"><span class="ml-0.5 font-light text-[8px]">העבר:</span><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-emerald-600 hover:bg-emerald-50">רבע 2</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-amber-600 hover:bg-amber-50">רבע 3</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-slate-700 hover:bg-slate-100">רבע 4</button></div></div></div>
+                    </div>
+
+                    <!-- רבע 2 -->
+                    <div id="q2-container" class="bg-emerald-50/40 border border-emerald-100 rounded-xl p-2.5 flex flex-col h-[220px] transition-all duration-200">
+                        <div onclick="toggleExpandQuadrant('q2')" class="flex justify-between items-center mb-1.5 text-[10px] font-semibold text-emerald-900 cursor-pointer hover:bg-emerald-100/60 p-1 rounded-lg transition-colors select-none">
+                            <span class="flex items-center gap-1">🔍 רבע 2: תזמן בלו"ז</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="bg-emerald-200/50 px-1.5 py-0.5 rounded text-[9px]" id="count-q2">1</span>
+                                <button onclick="event.stopPropagation(); toggleExpandQuadrant('q2')" id="close-q2" class="hidden text-slate-500 hover:text-slate-800 text-xs font-bold px-1">✕</button>
+                            </div>
+                        </div>
+                        <div id="q2-list" class="flex-1 overflow-y-auto custom-scrollbar space-y-1.5 pr-0.5"><div class="bg-white p-2 rounded-lg border transition-all flex flex-col gap-1 group hover:shadow-xs border-slate-200"><div class="flex items-start justify-between gap-1.5"><div class="flex items-start gap-1.5 flex-1"><button class="w-4 h-4 rounded border flex items-center justify-center mt-0.5 text-[10px] font-bold transition-colors border-slate-300 hover:border-slate-400 bg-slate-50"></button><span class="text-[11px] leading-tight text-slate-700 break-all flex-1 font-normal">לתזמן תוכנית פיתוח שנתית (משימת רבע 2 קלאסית)</span></div><button class="text-slate-300 hover:text-red-500 p-0.5 rounded transition-colors text-[9px] opacity-0 group-hover:opacity-100 focus:opacity-100">❌</button></div><div class="flex items-center justify-end gap-1 pt-1 border-t border-slate-50 text-[8px] text-slate-400"><span class="ml-0.5 font-light text-[8px]">העבר:</span><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-red-600 hover:bg-red-50">רבע 1</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-amber-600 hover:bg-amber-50">רבע 3</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-slate-700 hover:bg-slate-100">רבע 4</button></div></div></div>
+                    </div>
+                </div>
+
+                <!-- שורה 2: משימות לא חשובות (רבעים 3 ו-4) -->
+                <div class="grid grid-cols-[35px_1fr_1fr] gap-2 items-stretch min-h-[200px]">
+                    <div class="bg-slate-100 border border-slate-200 text-slate-700 rounded-lg py-2 flex flex-col items-center justify-center font-bold text-[10px] leading-none gap-0.5 shadow-xs select-none">
+                        <span>💤</span><span>ל</span><span>א</span><span>-</span><span>ח</span><span>ש</span><span>ו</span><span>ב</span>
+                    </div>
+                    
+                    <!-- רבע 3 -->
+                    <div id="q3-container" class="bg-amber-50/40 border border-amber-100 rounded-xl p-2.5 flex flex-col h-[220px] transition-all duration-200">
+                        <div onclick="toggleExpandQuadrant('q3')" class="flex justify-between items-center mb-1.5 text-[10px] font-semibold text-amber-900 cursor-pointer hover:bg-amber-100/60 p-1 rounded-lg transition-colors select-none">
+                            <span class="flex items-center gap-1">🔍 רבע 3: תאציל סמכות</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="bg-amber-200/50 px-1.5 py-0.5 rounded text-[9px]" id="count-q3">1</span>
+                                <button onclick="event.stopPropagation(); toggleExpandQuadrant('q3')" id="close-q3" class="hidden text-slate-500 hover:text-slate-800 text-xs font-bold px-1">✕</button>
+                            </div>
+                        </div>
+                        <div id="q3-list" class="flex-1 overflow-y-auto custom-scrollbar space-y-1.5 pr-0.5"><div class="bg-white p-2 rounded-lg border transition-all flex flex-col gap-1 group hover:shadow-xs border-slate-200"><div class="flex items-start justify-between gap-1.5"><div class="flex items-start gap-1.5 flex-1"><button class="w-4 h-4 rounded border flex items-center justify-center mt-0.5 text-[10px] font-bold transition-colors border-slate-300 hover:border-slate-400 bg-slate-50"></button><span class="text-[11px] leading-tight text-slate-700 break-all flex-1 font-normal">לענות למיילים שוטפים בתיבה</span></div><button class="text-slate-300 hover:text-red-500 p-0.5 rounded transition-colors text-[9px] opacity-0 group-hover:opacity-100 focus:opacity-100">❌</button></div><div class="flex items-center justify-end gap-1 pt-1 border-t border-slate-50 text-[8px] text-slate-400"><span class="ml-0.5 font-light text-[8px]">העבר:</span><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-red-600 hover:bg-red-50">רבע 1</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-emerald-600 hover:bg-emerald-50">רבע 2</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-slate-700 hover:bg-slate-100">רבע 4</button></div></div></div>
+                    </div>
+
+                    <!-- רבע 4 -->
+                    <div id="q4-container" class="bg-slate-100/60 border border-slate-200 rounded-xl p-2.5 flex flex-col h-[220px] transition-all duration-200">
+                        <div onclick="toggleExpandQuadrant('q4')" class="flex justify-between items-center mb-1.5 text-[10px] font-semibold text-slate-800 cursor-pointer hover:bg-slate-200/60 p-1 rounded-lg transition-colors select-none">
+                            <span class="flex items-center gap-1">🔍 רבע 4: מחק/צמצם</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="bg-slate-200 px-1.5 py-0.5 rounded text-[9px]" id="count-q4">1</span>
+                                <button onclick="event.stopPropagation(); toggleExpandQuadrant('q4')" id="close-q4" class="hidden text-slate-500 hover:text-slate-800 text-xs font-bold px-1">✕</button>
+                            </div>
+                        </div>
+                        <div id="q4-list" class="flex-1 overflow-y-auto custom-scrollbar space-y-1.5 pr-0.5"><div class="bg-white p-2 rounded-lg border transition-all flex flex-col gap-1 group hover:shadow-xs border-slate-200"><div class="flex items-start justify-between gap-1.5"><div class="flex items-start gap-1.5 flex-1"><button class="w-4 h-4 rounded border flex items-center justify-center mt-0.5 text-[10px] font-bold transition-colors border-slate-300 hover:border-slate-400 bg-slate-50"></button><span class="text-[11px] leading-tight text-slate-700 break-all flex-1 font-normal">סידור תיקיות ישנות וקבצים זמניים</span></div><button class="text-slate-300 hover:text-red-500 p-0.5 rounded transition-colors text-[9px] opacity-0 group-hover:opacity-100 focus:opacity-100">❌</button></div><div class="flex items-center justify-end gap-1 pt-1 border-t border-slate-50 text-[8px] text-slate-400"><span class="ml-0.5 font-light text-[8px]">העבר:</span><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-red-600 hover:bg-red-50">רבע 1</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-emerald-600 hover:bg-emerald-50">רבע 2</button><button class="px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium hover:text-amber-600 hover:bg-amber-50">רבע 3</button></div></div></div>
+                    </div>
+                </div>
+
+                <div class="text-left mt-2">
+                    <button onclick="clearCompletedTasks()" class="text-[10px] text-slate-400 hover:text-red-600 transition-colors bg-white px-3 py-1 rounded-lg border border-slate-200 border-dashed">
+                        🗑️ נקה משימות שבוצעו מהמסד
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- אפליקציה 2: טיימר פומודורו -->
+        <div id="app-pomodoro" class="hidden flex-col items-center justify-center bg-white p-6 rounded-xl shadow-xs border border-slate-100 flex-1 min-h-[400px]">
+            <div class="max-w-md w-full text-center space-y-6">
+                
+                <!-- מצבי פומודורו -->
+                <div class="flex justify-center gap-2 bg-slate-50 p-1 rounded-xl border border-slate-200/60">
+                    <button id="pomo-work" onclick="setPomodoroMode('work')" class="flex-1 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-900 text-white">
+                        🎯 עבודה (25ד׳)
+                    </button>
+                    <button id="pomo-short" onclick="setPomodoroMode('short')" class="flex-1 py-1.5 rounded-lg text-xs font-medium transition-all text-slate-600 hover:bg-slate-100">
+                        ☕ הפסקה קלה
+                    </button>
+                    <button id="pomo-long" onclick="setPomodoroMode('long')" class="flex-1 py-1.5 rounded-lg text-xs font-medium transition-all text-slate-600 hover:bg-slate-100">
+                        🌴 הפסקה ארוכה
+                    </button>
+                </div>
+
+                <!-- תצוגת הזמן המרכזית -->
+                <div class="py-8 bg-slate-50/50 rounded-2xl border border-slate-100 shadow-inner relative overflow-hidden">
+                    <div id="timer-display" class="text-6xl font-bold tracking-tight text-slate-900 font-mono select-none">25:00</div>
+                    <div id="timer-status-text" class="text-xs font-medium text-slate-400 mt-2 tracking-wide uppercase">זמן להתמקד</div>
+                </div>
+
+                <!-- כפתורי שליטה בטיימר -->
+                <div class="flex justify-center gap-4">
+                    <button id="btn-pomo-start" onclick="togglePomodoroTimer()" class="flex-1 max-w-[140px] bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2.5 rounded-xl transition-all text-xs shadow-xs flex items-center justify-center gap-1.5">
+                        <span id="btn-pomo-start-icon">▶️</span> <span id="btn-pomo-start-text">הפעל טיימר</span>
+                    </button>
+                    <button onclick="resetPomodoroTimer()" class="flex-1 max-w-[140px] bg-slate-100 hover:bg-slate-200 text-slate-600 font-semibold py-2.5 rounded-xl transition-all text-xs border border-slate-200 flex items-center justify-center gap-1.5">
+                        <span>🔄</span> איפוס
+                    </button>
+                </div>
+
+                <!-- טיפ הסבר קטן -->
+                <div class="p-3 bg-indigo-50/50 rounded-lg text-right border border-indigo-100/50 flex gap-2.5 items-start">
+                    <span class="text-base">💡</span>
+                    <p class="text-[11px] text-indigo-900/90 leading-normal">
+                        <strong>שיטת פומודורו:</strong> עבדו בריכוז מלא במשך 25 דקות על אחת המשימות שסימנתם כמפתחות במטריצה, ולאחר מכן קחו הפסקה של 5 דקות להתרעננות.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div><div id="custom-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-xl max-w-sm w-full p-4 shadow-lg text-center animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
+            <div class="text-2xl mb-1" id="modal-icon">📤</div>
+            <h4 class="text-sm font-bold text-slate-900 mb-1" id="modal-title">גיבוי נתוני המשימות</h4>
+            <div class="overflow-y-auto custom-scrollbar flex-1 mb-4">
+                <p class="text-xs text-slate-600" id="modal-message">לחץ על הכפתור הירוק למטה כדי להעתיק את קוד הגיבוי (JSON) ישירות ללוח הטלפון שלך, ואז תוכל לשמור אותו בכל אפליקציית פתקים:</p>
+                <div id="modal-custom-content" class="mt-2 w-full text-right hidden"></div>
+            </div>
+            <div class="flex justify-center gap-2">
+                <button onclick="closeModal()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium px-4 py-1.5 rounded-lg transition-colors">
+                    סגור
+                </button>
+            </div>
+        </div>
+    </div><script>
+        // ==========================================
+        // תשתית אתחול ומערך אבטחת PWA קבוע (Data URI חסין מחיקות זיכרון)
+        // ==========================================
+        const manifestData = {
+            "name": "מרכז הפרודוקטיביות החכם אופליין",
+            "short_name": "מטריצה חכמה",
+            "start_url": ".",
+            "display": "standalone",
+            "background_color": "#f8fafc",
+            "theme_color": "#0f172a",
+            "description": "מטריצת אייזנאוור וטיימר פומודורו משולבים על בסיס IndexedDB",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230f172a'/><text x='50' y='66' font-size='52' text-anchor='middle'>🚀</text></svg>",
+                    "sizes": "512x512",
+                    "type": "image/svg+xml",
+                    "purpose": "any maskable"
+                }
+            ]
+        };
+        const manifestString = JSON.stringify(manifestData);
+        document.getElementById('pwa-manifest').setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(manifestString));
+
+        // ==========================================
+        // לוגיקת מסד הנתונים אופליין - IndexedDB
+        // ==========================================
+        const dbName = "EisenhowerPwaDB";
+        const storeName = "tasksStore";
+        let db = null;
+        let tasks = [];
+
+        function initIndexedDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(dbName, 1);
+                
+                request.onerror = (event) => {
+                    console.error("IndexedDB error:", event.target.error);
+                    reject(event.target.error);
+                };
+
+                request.onsuccess = (event) => {
+                    db = event.target.result;
+                    resolve(db);
+                };
+
+                request.onupgradeneeded = (event) => {
+                    const database = event.target.result;
+                    if (!database.objectStoreNames.contains(storeName)) {
+                        database.createObjectStore(storeName, { keyPath: "id" });
+                    }
+                };
+            });
+        }
+
+        function loadTasksFromDB() {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([storeName], "readonly");
+                const store = transaction.objectStore(storeName);
+                const request = store.getAll();
+
+                request.onsuccess = () => {
+                    tasks = request.result;
+                    resolve(tasks);
+                };
+
+                request.onerror = (event) => {
+                    reject(event.target.error);
+                };
+            });
+        }
+
+        function putTaskToDB(task) {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([storeName], "readwrite");
+                const store = transaction.objectStore(storeName);
+                const request = store.put(task);
+
+                request.onsuccess = () => resolve();
+                request.onerror = (event) => reject(event.target.error);
+            });
+        }
+
+        function deleteTaskFromDB(id) {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([storeName], "readwrite");
+                const store = transaction.objectStore(storeName);
+                const request = store.delete(id);
+
+                request.onsuccess = () => resolve();
+                request.onerror = (event) => reject(event.target.error);
+            });
+        }
+
+        // ==========================================
+        // לוגיקה כללית ומעבר לשוניות (Tabs)
+        // ==========================================
+        function switchTab(tabName) {
+            const tabMatrix = document.getElementById('tab-eisenhower');
+            const tabPomo = document.getElementById('tab-pomodoro');
+            const appMatrix = document.getElementById('app-eisenhower');
+            const appPomo = document.getElementById('app-pomodoro');
+
+            if (tabName === 'eisenhower') {
+                tabMatrix.className = "flex-1 py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all bg-slate-900 text-white";
+                tabPomo.className = "flex-1 py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all text-slate-600 hover:bg-slate-50";
+                appMatrix.classList.remove('hidden');
+                appMatrix.classList.add('flex');
+                appPomo.classList.add('hidden');
+                appPomo.classList.remove('flex');
+            } else {
+                tabPomo.className = "flex-1 py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all bg-slate-900 text-white";
+                tabMatrix.className = "flex-1 py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all text-slate-600 hover:bg-slate-50";
+                appPomo.classList.remove('hidden');
+                appPomo.classList.add('flex');
+                appMatrix.classList.add('hidden');
+                appMatrix.classList.remove('flex');
+            }
+        }
+
+        window.onload = function() {
+            initIndexedDB()
+                .then(() => loadTasksFromDB())
+                .then((loadedTasks) => {
+                    if (loadedTasks.length === 0) {
+                        const defaultTasks = [
+                            { id: 1, text: 'להגיש את הדוח הדחוף להנהלה', important: true, urgent: true, completed: false },
+                            { id: 2, text: 'לתזמן תוכנית פיתוח שנתית (משימת רבע 2 קלאסית)', important: true, urgent: false, completed: false },
+                            { id: 3, text: 'לענות למיילים שוטפים בתיבה', important: false, urgent: true, completed: false },
+                            { id: 4, text: 'סידור תיקיות ישנות וקבצים זמניים', important: false, urgent: false, completed: false }
+                        ];
+                        let promises = defaultTasks.map(t => putTaskToDB(t));
+                        return Promise.all(promises).then(() => loadTasksFromDB());
+                    }
+                    return loadedTasks;
+                })
+                .then(() => {
+                    renderMatrix();
+                })
+                .catch(err => {
+                    console.error("Initialization failed", err);
+                });
+
+            initPomodoro();
+
+            document.getElementById('task-text').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    handleAddTask();
+                }
+            });
+        };
+
+        function showMessage(title, message, icon = '💡') {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-message').innerText = message;
+            document.getElementById('modal-icon').innerText = icon;
+            
+            const customContent = document.getElementById('modal-custom-content');
+            if (customContent) {
+                customContent.classList.add('hidden');
+            }
+            
+            const modal = document.getElementById('custom-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        document.getElementById('custom-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            
+            const customContent = document.getElementById('modal-custom-content');
+            if (customContent) {
+                customContent.innerHTML = '';
+                customContent.classList.add('hidden');
+            }
+        }
+
+        // ==========================================
+        // ניהול משימות ופעולות המטריצה
+        // ==========================================
+        function handleAddTask() {
+            const taskInput = document.getElementById('task-text');
+            const isImportant = document.getElementById('is-important').checked;
+            const isUrgent = document.getElementById('is-urgent').checked;
+            
+            const text = taskInput.value.trim();
+            if (!text) {
+                showMessage('שדה ריק', 'אנא הזן תיאור למשימה.', '⚠️');
+                return;
+            }
+
+            const newTask = {
+                id: Date.now(),
+                text: text,
+                important: isImportant,
+                urgent: isUrgent,
+                completed: false
+            };
+
+            putTaskToDB(newTask)
+                .then(() => loadTasksFromDB())
+                .then(() => {
+                    renderMatrix();
+                    taskInput.value = '';
+                    document.getElementById('is-important').checked = false;
+                    document.getElementById('is-urgent').checked = false;
+                });
+        }
+
+        function deleteTask(id) {
+            deleteTaskFromDB(id)
+                .then(() => loadTasksFromDB())
+                .then(() => renderMatrix());
+        }
+
+        function toggleTaskComplete(id) {
+            const task = tasks.find(t => t.id === id);
+            if (task) {
+                task.completed = !task.completed;
+                putTaskToDB(task)
+                    .then(() => loadTasksFromDB())
+                    .then(() => renderMatrix());
+            }
+        }
+
+        function moveQuadrant(id, newUrgent, newImportant) {
+            const targetTask = tasks.find(t => t.id === id);
+            if (targetTask) {
+                targetTask.urgent = newUrgent;
+                targetTask.important = newImportant;
+                putTaskToDB(targetTask)
+                    .then(() => loadTasksFromDB())
+                    .then(() => renderMatrix());
+            }
+        }
+
+        function clearCompletedTasks() {
+            const completedTasksList = tasks.filter(t => t.completed);
+            if (completedTasksList.length === 0) {
+                showMessage('סטטוס', 'אין משימות שסומנו כבוצעו.', 'ℹ️');
+                return;
+            }
+            
+            let promises = completedTasksList.map(t => deleteTaskFromDB(t.id));
+            Promise.all(promises)
+                .then(() => loadTasksFromDB())
+                .then(() => renderMatrix());
+        }
+
+        function toggleExpandQuadrant(qId) {
+            const container = document.getElementById(`${qId}-container`);
+            const closeBtn = document.getElementById(`close-${qId}`);
+            
+            if (!container || !closeBtn) return;
+
+            if (container.classList.contains('fixed')) {
+                container.className = container.getAttribute('data-original-classes');
+                closeBtn.classList.add('hidden');
+                
+                const backdrop = document.getElementById('matrix-backdrop');
+                if (backdrop) backdrop.classList.add('hidden');
+            } else {
+                closeAllExpanded();
+                
+                if (!container.hasAttribute('data-original-classes')) {
+                    container.setAttribute('data-original-classes', container.className);
+                }
+                
+                let colorClasses = '';
+                if (qId === 'q1') colorClasses = 'bg-red-50 border-red-200 text-red-900';
+                else if (qId === 'q2') colorClasses = 'bg-emerald-50 border-emerald-200 text-emerald-900';
+                else if (qId === 'q3') colorClasses = 'bg-amber-50 border-amber-200 text-amber-900';
+                else if (qId === 'q4') colorClasses = 'bg-slate-50 border-slate-300 text-slate-900';
+
+                container.className = `fixed inset-x-4 top-1/2 -translate-y-1/2 z-40 max-w-sm mx-auto ${colorClasses} border-2 rounded-2xl p-4 flex flex-col shadow-2xl h-[65vh] max-h-[480px] animate-in fade-in zoom-in-95 duration-200`;
+                closeBtn.classList.remove('hidden');
+                
+                let backdrop = document.getElementById('matrix-backdrop');
+                if (!backdrop) {
+                    backdrop = document.createElement('div');
+                    backdrop.id = 'matrix-backdrop';
+                    backdrop.className = 'fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-30 transition-all duration-200';
+                    backdrop.onclick = closeAllExpanded;
+                    document.body.appendChild(backdrop);
+                }
+                backdrop.classList.remove('hidden');
+            }
+        }
+
+        function closeAllExpanded() {
+            ['q1', 'q2', 'q3', 'q4'].forEach(qId => {
+                const container = document.getElementById(`${qId}-container`);
+                const closeBtn = document.getElementById(`close-${qId}`);
+                if (container && container.hasAttribute('data-original-classes') && container.classList.contains('fixed')) {
+                    container.className = container.getAttribute('data-original-classes');
+                    if (closeBtn) closeBtn.classList.add('hidden');
+                }
+            });
+            const backdrop = document.getElementById('matrix-backdrop');
+            if (backdrop) backdrop.classList.add('hidden');
+        }
+
+        function renderMatrix() {
+            const q1List = document.getElementById('q1-list');
+            const q2List = document.getElementById('q2-list');
+            const q3List = document.getElementById('q3-list');
+            const q4List = document.getElementById('q4-list');
+
+            q1List.innerHTML = '';
+            q2List.innerHTML = '';
+            q3List.innerHTML = '';
+            q4List.innerHTML = '';
+
+            let counts = { q1: 0, q2: 0, q3: 0, q4: 0 };
+
+            tasks.forEach(task => {
+                const taskEl = createTaskElement(task);
+                
+                if (task.important && task.urgent) {
+                    q1List.appendChild(taskEl);
+                    counts.q1++;
+                } else if (task.important && !task.urgent) {
+                    q2List.appendChild(taskEl);
+                    counts.q2++;
+                } else if (!task.important && task.urgent) {
+                    q3List.appendChild(taskEl);
+                    counts.q3++;
+                } else {
+                    q4List.appendChild(taskEl);
+                    counts.q4++;
+                }
+            });
+
+            document.getElementById('count-q1').innerText = counts.q1;
+            document.getElementById('count-q2').innerText = counts.q2;
+            document.getElementById('count-q3').innerText = counts.q3;
+            document.getElementById('count-q4').innerText = counts.q4;
+
+            const emptyTemplate = (txt) => `<p class="text-[10px] text-slate-400/70 text-center py-4 border border-dashed border-slate-200 rounded-lg">${txt}</p>`;
+            if (counts.q1 === 0) q1List.innerHTML = emptyTemplate('נקי מכל משימה');
+            if (counts.q2 === 0) q2List.innerHTML = emptyTemplate('נקי מכל משימה');
+            if (counts.q3 === 0) q3List.innerHTML = emptyTemplate('נקי מכל משימה');
+            if (counts.q4 === 0) q4List.innerHTML = emptyTemplate('נקי מכל משימה');
+
+            const total = tasks.length;
+            const completed = tasks.filter(t => t.completed).length;
+            const rate = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            document.getElementById('total-tasks').innerText = total;
+            document.getElementById('completed-tasks').innerText = completed;
+            document.getElementById('completion-rate').innerText = rate + '%';
+        }
+
+        function createTaskElement(task) {
+            const container = document.createElement('div');
+            container.className = `bg-white p-2 rounded-lg border transition-all flex flex-col gap-1 group hover:shadow-xs ${task.completed ? 'border-slate-100 opacity-50' : 'border-slate-200'}`;
+
+            const mainRow = document.createElement('div');
+            mainRow.className = 'flex items-start justify-between gap-1.5';
+
+            const rightSide = document.createElement('div');
+            rightSide.className = 'flex items-start gap-1.5 flex-1';
+
+            const checkbox = document.createElement('button');
+            checkbox.onclick = () => toggleTaskComplete(task.id);
+            checkbox.className = `w-4 h-4 rounded border flex items-center justify-center mt-0.5 text-[10px] font-bold transition-colors ${task.completed ? 'bg-emerald-500 border-emerald-500 text-white' : 'border-slate-300 hover:border-slate-400 bg-slate-50'}`;
+            checkbox.innerHTML = task.completed ? '✓' : '';
+
+            const textSpan = document.createElement('span');
+            textSpan.className = `text-[11px] leading-tight text-slate-700 break-all flex-1 ${task.completed ? 'line-through text-slate-400 font-light' : 'font-normal'}`;
+            textSpan.innerText = task.text;
+
+            rightSide.appendChild(checkbox);
+            rightSide.appendChild(textSpan);
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.onclick = () => deleteTask(task.id);
+            deleteBtn.className = 'text-slate-300 hover:text-red-500 p-0.5 rounded transition-colors text-[9px] opacity-0 group-hover:opacity-100 focus:opacity-100';
+            deleteBtn.innerHTML = '❌';
+
+            mainRow.appendChild(rightSide);
+            mainRow.appendChild(deleteBtn);
+            container.appendChild(mainRow);
+
+            if (!task.completed) {
+                const actionsRow = document.createElement('div');
+                actionsRow.className = 'flex items-center justify-end gap-1 pt-1 border-t border-slate-50 text-[8px] text-slate-400';
+                
+                const moveLabel = document.createElement('span');
+                moveLabel.className = 'ml-0.5 font-light text-[8px]';
+                moveLabel.innerText = 'העבר:';
+                actionsRow.appendChild(moveLabel);
+
+                if (!(task.important && task.urgent)) actionsRow.appendChild(createMoveButton('רבע 1', () => moveQuadrant(task.id, true, true), 'hover:text-red-600 hover:bg-red-50'));
+                if (!(task.important && !task.urgent)) actionsRow.appendChild(createMoveButton('רבע 2', () => moveQuadrant(task.id, false, true), 'hover:text-emerald-600 hover:bg-emerald-50'));
+                if (!(!task.important && task.urgent)) actionsRow.appendChild(createMoveButton('רבע 3', () => moveQuadrant(task.id, true, false), 'hover:text-amber-600 hover:bg-amber-50'));
+                if (!(!task.important && !task.urgent)) actionsRow.appendChild(createMoveButton('רבע 4', () => moveQuadrant(task.id, false, false), 'hover:text-slate-700 hover:bg-slate-100'));
+
+                container.appendChild(actionsRow);
+            }
+
+            return container;
+        }
+
+        function createMoveButton(text, onClickAction, hoverClasses) {
+            const btn = document.createElement('button');
+            btn.onclick = onClickAction;
+            btn.className = `px-1 py-0.5 rounded border border-slate-100 bg-slate-50 text-[8px] transition-all font-medium ${hoverClasses}`;
+            btn.innerText = text;
+            return btn;
+        }
+
+        // ==========================================
+        // מנגנון ייבוא וייצוא קובצי גיבוי (JSON) - מותאם מובייל ו-HTTPS באמצעות שיתוף טקסט חסין
+        // ==========================================
+        function exportTasksJSON() {
+            if (tasks.length === 0) {
+                showMessage('ייצוא נתונים', 'אין משימות קיימות לייצוא.', 'ℹ️');
+                return;
+            }
+            try {
+                const dataStr = JSON.stringify(tasks, null, 2);
+                
+                // שימוש בשיתוף מחרוזת טקסט מובנית (Plain Text Share) - פתרון חסין ב-100% לכל מכשירי המובייל תחת HTTPS
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'גיבוי מרכז הפרודוקטיביות',
+                        text: dataStr
+                    })
+                    .then(() => {
+                        console.log('Text data shared via Native Sheet successfully.');
+                    })
+                    .catch((err) => {
+                        // אם המשתמש ביטל את תפריט השיתוף באופן יזום, לא נעשה כלום. אחרת, נציג פולבק.
+                        if (err.name !== 'AbortError') {
+                            showBackupModal(dataStr);
+                        }
+                    });
+                } else {
+                    // פולבק למחשבים שולחניים או סביבות ללא תמיכת שיתוף - הורדה פיזית קלאסית
+                    try {
+                        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                        const url = URL.createObjectURL(dataBlob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = `tasks_backup_${new Date().toISOString().slice(0,10)}.json`;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(url);
+                    } catch (downloadErr) {
+                        console.log("File download interaction restricted by environment.");
+                    }
+                    showBackupModal(dataStr);
+                }
+            } catch (e) {
+                showMessage('שגיאה', 'נכשלה בניית קובץ הגיבוי: ' + e.message, '⚠️');
+            }
+        }
+
+        function showBackupModal(jsonData) {
+            document.getElementById('modal-title').innerText = 'גיבוי נתוני המשימות';
+            document.getElementById('modal-icon').innerText = '📤';
+            document.getElementById('modal-message').innerText = 'לחץ על הכפתור הירוק למטה כדי להעתיק את קוד הגיבוי (JSON) ישירות ללוח הטלפון שלך, ואז תוכל לשמור אותו בכל אפליקציית פתקים:';
+            
+            const customContent = document.getElementById('modal-custom-content');
+            customContent.innerHTML = `
+                <textarea id="backup-text-area" readonly class="w-full h-32 p-2 bg-slate-50 border border-slate-200 rounded-lg text-[10px] font-mono mt-2 focus:outline-none custom-scrollbar select-all" dir="ltr">${jsonData}</textarea>
+                <button onclick="copyBackupToClipboard()" class="mt-2 w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-medium py-2 rounded-lg transition-colors flex items-center justify-center gap-1 shadow-xs">
+                    <span>📋</span> העתק את מחרוזת הגיבוי ללוח
+                </button>
+            `;
+            customContent.classList.remove('hidden');
+            
+            const modal = document.getElementById('custom-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function copyBackupToClipboard() {
+            const txtArea = document.getElementById('backup-text-area');
+            if (!txtArea) return;
+            
+            const textarea = document.createElement('textarea');
+            textarea.value = txtArea.value;
+            textarea.style.position = 'fixed';
+            textarea.style.top = '0';
+            textarea.style.left = '0';
+            textarea.style.width = '2em';
+            textarea.style.height = '2em';
+            textarea.style.padding = '0';
+            textarea.style.border = 'none';
+            textarea.style.outline = 'none';
+            textarea.style.boxShadow = 'none';
+            textarea.style.background = 'transparent';
+            
+            document.body.appendChild(textarea);
+            textarea.select();
+            textarea.setSelectionRange(0, 999999);
+            
+            const isCopied = document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            if (isCopied) {
+                showMessage('העתקה הצליחה!', 'נתוני הגיבוי הועתקו ללוח הגזירים שלך בהצלחה. כעת תוכל להדביק ולשמור אותם בבטחה.', '🎉');
+            }
+        }
+
+        function importTasksJSON(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    if (!Array.isArray(importedData)) {
+                        throw new Error("מבנה הקובץ אינו תקין (חייב להיות מערך משימות).");
+                    }
+
+                    const clearTx = db.transaction([storeName], "readwrite");
+                    clearTx.objectStore(storeName).clear();
+
+                    clearTx.oncomplete = () => {
+                        let putPromises = importedData.map(task => {
+                            return putTaskToDB({
+                                id: task.id || Date.now() + Math.random(),
+                                text: task.text || "משימה ללא כותרת",
+                                important: !!task.important,
+                                urgent: !!task.urgent,
+                                completed: !!task.completed
+                            });
+                        });
+
+                        Promise.all(putPromises)
+                            .then(() => loadTasksFromDB())
+                            .then(() => {
+                                renderMatrix();
+                                showMessage('ייבוא הושלם', 'כל המשימות מקובץ הגיבוי נטענו בהצלחה למסד הנתונים אופליין!', '🎉');
+                            });
+                    };
+                } catch (err) {
+                    showMessage('ייבוא נכשל', 'שגיאה בפענוח הקובץ: ' + err.message, '⚠️');
+                }
+                document.getElementById('import-file-input').value = '';
+            };
+            reader.readAsText(file);
+        }
+
+        // ==========================================
+        // פונקציית העתקת קוד המקור המלא ללוח
+        // ==========================================
+        function copyAppCode() {
+            try {
+                const fullSource = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+                const textarea = document.createElement('textarea');
+                textarea.value = fullSource;
+                textarea.style.position = 'fixed';
+                textarea.style.top = '0';
+                textarea.style.left = '0';
+                textarea.style.width = '2em';
+                textarea.style.height = '2em';
+                textarea.style.padding = '0';
+                textarea.style.border = 'none';
+                textarea.style.outline = 'none';
+                textarea.style.boxShadow = 'none';
+                textarea.style.background = 'transparent';
+                
+                document.body.appendChild(textarea);
+                textarea.select();
+                textarea.setSelectionRange(0, 999999);
+                
+                const isCopied = document.execCommand('copy');
+                document.body.removeChild(textarea);
+                
+                if (isCopied) {
+                    showMessage(
+                        'הקוד הועתק בהצלחה!', 
+                        'קוד המקור המלא מעודכן כעת בלוח שלך. תוכל להדביק אותו לקובץ טקסט ולשמור כ-html, או להעלות אותו ישירות ל-Netlify/Cloudflare Pages.', 
+                        '💾'
+                    );
+                } else {
+                    showMessage('העתקה נכשלה', 'לא הצלחנו להעתיק את הקוד ללוח באופן אוטומטי במכשיר זה.', '⚠️');
+                }
+            } catch (err) {
+                showMessage('שגיאה במערכת', 'אירעה שגיאה בעת ניסיון חילוץ והעתקת הקוד: ' + err.message, '⚠️');
+            }
+        }
+
+        // ==========================================
+        // לוגיקת אפליקציית טיימר פומודורו
+        // ==========================================
+        let pomoInterval = null;
+        let pomoTimeLeft = 25 * 60;
+        let pomoCurrentMode = 'work';
+        let pomoIsRunning = false;
+
+        const pomoDurations = {
+            work: 25 * 60,
+            short: 5 * 60,
+            long: 15 * 60
+        };
+
+        function initPomodoro() {
+            updatePomodoroDisplay();
+        }
+
+        function setPomodoroMode(mode) {
+            if (pomoIsRunning) {
+                togglePomodoroTimer();
+            }
+
+            pomoCurrentMode = mode;
+            pomoTimeLeft = pomoDurations[mode];
+
+            const modes = ['work', 'short', 'long'];
+            const activeClasses = "flex-1 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-900 text-white";
+            const inactiveClasses = "flex-1 py-1.5 rounded-lg text-xs font-medium transition-all text-slate-600 hover:bg-slate-100";
+            
+            modes.forEach(m => {
+                const btn = document.getElementById(`pomo-${m}`);
+                if (m === mode) {
+                    btn.className = activeClasses;
+                } else {
+                    btn.className = inactiveClasses;
+                }
+            });
+
+            const statusText = document.getElementById('timer-status-text');
+            if (mode === 'work') statusText.innerText = 'זמן להתמקד';
+            else if (mode === 'short') statusText.innerText = 'הפסקה קצרה, נשימה עמוקה';
+            else statusText.innerText = 'הפסקה ארוכה, מנוחה מלאה';
+
+            updatePomodoroDisplay();
+        }
+
+        function updatePomodoroDisplay() {
+            const minutes = Math.floor(pomoTimeLeft / 60);
+            const seconds = pomoTimeLeft % 60;
+            const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timer-display').innerText = formattedTime;
+        }
+
+        function togglePomodoroTimer() {
+            const startBtnText = document.getElementById('btn-pomo-start-text');
+            const startBtnIcon = document.getElementById('btn-pomo-start-icon');
+
+            if (pomoIsRunning) {
+                clearInterval(pomoInterval);
+                pomoIsRunning = false;
+                startBtnText.innerText = 'המשך טיימר';
+                startBtnIcon.innerText = '▶️';
+            } else {
+                pomoIsRunning = true;
+                startBtnText.innerText = 'השהה טיימר';
+                startBtnIcon.innerText = '⏸️';
+
+                pomoInterval = setInterval(() => {
+                    pomoTimeLeft--;
+                    updatePomodoroDisplay();
+
+                    if (pomoTimeLeft <= 0) {
+                        clearInterval(pomoInterval);
+                        pomoIsRunning = false;
+                        startBtnText.innerText = 'הפעל טיימר';
+                        startBtnIcon.innerText = '▶️';
+                        
+                        playAlertSound();
+                        
+                        if (pomoCurrentMode === 'work') {
+                            showMessage('כל הכבוד!', 'מחזור העבודה הסתיים. זמן לקחת הפסקה קלה!', '🎉');
+                            setPomodoroMode('short');
+                        } else {
+                            showMessage('ההפסקה הסתיימה', 'זמן לחזור לעבודה ולריכוז!', '💪');
+                            setPomodoroMode('work');
+                        }
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetPomodoroTimer() {
+            if (pomoIsRunning) {
+                togglePomodoroTimer();
+            }
+            pomoTimeLeft = pomoDurations[pomoCurrentMode];
+            const startBtnText = document.getElementById('btn-pomo-start-text');
+            startBtnText.innerText = 'הפעל טיימר';
+            document.getElementById('btn-pomo-start-icon').innerText = '▶️';
+            updatePomodoroDisplay();
+        }
+
+        function playAlertSound() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx) {
+                    const oscillator = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    oscillator.type = 'sine';
+                    oscillator.frequency.setValueAtTime(587.33, audioCtx.currentTime);
+                    gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                    oscillator.start();
+                    oscillator.stop(audioCtx.currentTime + 0.4);
+                }
+            } catch (e) {
+                console.log("Audio API not supported or blocked by browser policy");
+            }
+        }
+    </script></body></html>
